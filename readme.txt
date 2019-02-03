@@ -1,6 +1,6 @@
 === WP H-Change Mail Sender ===
 Requires at least: 4.0
-Tested up to: 5.0.2
+Tested up to: 5.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,5 +14,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 3. Configure the plugin in Dashboard -> WP H-Change Mail Sender
 
 == Changelog ==
+Version 1.1
+1. Fehler Plugin-Titel beseitigt
+
 Version 1.0
 1. Erste Version

@@ -5,8 +5,8 @@ Plugin URI:        https://github.com/m266/wp-h-change-mail-sender
 Description:       &Auml;ndert die Adresse und E-Mail bei System-Nachrichten
 Author:            Hans M. Herbrand
 Author URI:        https://www.web266.de
-Version:           1.0
-Date:              2019-01-06
+Version:           1.1
+Date:              2019-02-03
 Credits:           Fork from https://wordpress.org/plugins/cb-change-mail-sender/
 License:           GNU General Public License v2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,12 +24,11 @@ require_once 'inc/wphcms_plugin_defined_github.php';
 // Definitionen
 // Prefix Variable: $wphcms_
 // Prefix Function: wphcms_
-$title = "WP H-Change Mail Sender 1.0" . " > " . "Einstellungen"; // Plugin-Name und Versions-Nummer (Zeile 29)
-
+$title_wphcms = "WP H-Change Mail Sender 1.1" . " > " . "Einstellungen"; // Plugin-Name und Versions-Nummer (Zeile 29)
 function wphcms_sender_register() {
-    global $title;
+    global $title_wphcms;
     global $wphcms_menu_name_version;
-    add_settings_section('wphcms_sender_section', $title, 'wphcms_sender_text', 'wphcms_sender');
+    add_settings_section('wphcms_sender_section', $title_wphcms, 'wphcms_sender_text', 'wphcms_sender');
     add_settings_field('wphcms_sender_id', 'Absender', 'wphcms_sender_function', 'wphcms_sender', 'wphcms_sender_section');
     register_setting('wphcms_sender_section', 'wphcms_sender_id');
     add_settings_field('wphcms_sender_email_id', 'E-Mail-Adresse', 'wphcms_sender_email', 'wphcms_sender', 'wphcms_sender_section');
