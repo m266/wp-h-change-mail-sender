@@ -2,7 +2,7 @@
 /*
 Plugin Name:       WP H-Change Mail Sender
 Plugin URI:        https://github.com/m266/wp-h-change-mail-sender
-Description:       &Auml;ndert die Adresse und E-Mail bei System-Nachrichten
+Description:       Aendert die Adresse und E-Mail bei System-Nachrichten
 Author:            Hans M. Herbrand
 Author URI:        https://www.web266.de
 Version:           1.1
