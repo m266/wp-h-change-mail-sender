@@ -14,6 +14,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 3. Configure the plugin in Dashboard -> WP H-Change Mail Sender
 
 == Changelog ==
+Version 1.2.1
+1. Textberichtigung
+
 Version 1.2
 1. Neuprogrammierung
 2. Eingaben werden in der Datenbank gespeichert

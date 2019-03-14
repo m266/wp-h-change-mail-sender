@@ -5,8 +5,8 @@ Plugin URI:        https://github.com/m266/wp-h-change-mail-sender
 Description:       Ändert die Adresse und E-Mail bei System-Nachrichten
 Author:            Hans M. Herbrand
 Author URI:        https://www.web266.de
-Version:           1.2
-Date:              2019-03-13
+Version:           1.2.1
+Date:              2019-03-14
 License:           GNU General Public License v2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 GitHub Plugin URI: https://github.com/m266/wp-h-change-mail-sender
