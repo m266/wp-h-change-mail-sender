@@ -1,12 +1,12 @@
 === WP H-Change Mail Sender ===
 Requires at least: 4.0
-Tested up to: 5.1.1
+Tested up to: 5.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Description ==
-Ändert die Adresse und E-Mail bei System-Nachrichten
+&Auml;ndert die Adresse und E-Mail bei System-Nachrichten
 
 == Installation ==
 1. Upload 'beispiel-plugin-with-submenu'  to the '/wp-content/plugins/' directory
@@ -14,6 +14,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 3. Configure the plugin in Dashboard -> WP H-Change Mail Sender
 
 == Changelog ==
+Version 1.2.2
+1. Umlautfehler beseitigt
+
 Version 1.2.1
 1. Textberichtigung
 
