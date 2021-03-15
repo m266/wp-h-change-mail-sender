@@ -5,8 +5,8 @@ Plugin URI:        https://github.com/m266/wp-h-change-mail-sender
 Description:       Ändert die Adresse und E-Mail bei System-Nachrichten
 Author:            Hans M. Herbrand
 Author URI:        https://www.web266.de
-Version:           1.3
-Date:              2021-02-06
+Version:           1.4
+Date:              2021-03-15
 License:           GNU General Public License v2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 GitHub Plugin URI: https://github.com/m266/wp-h-change-mail-sender
@@ -14,6 +14,25 @@ GitHub Plugin URI: https://github.com/m266/wp-h-change-mail-sender
 
 // Externer Zugriff verhindern
 defined('ABSPATH') || exit();
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// Check GitHub Updater aktiv
+// Anpassungen Plugin-Name und Funktions-Name vornehmen
+if (!function_exists('is_plugin_inactive')) {
+    require_once ABSPATH . '/wp-admin/includes/plugin.php';
+}
+if (is_plugin_inactive('github-updater/github-updater.php')) {
+// E-Mail an Admin senden, wenn inaktiv
+register_activation_hook( __FILE__, 'wphcms_activate' ); // Funktions-Name anpassen
+function wphcms_activate() { // Funktions-Name anpassen
+$to = get_option('admin_email');
+$subject = 'Plugin "WP H-Change Mail Sender"'; // Plugin-Name anpassen
+$message = 'Bitte das Plugin "GitHub Updater" hier https://web266.de/tutorials/github/github-updater/ herunterladen, installieren und aktivieren, um weiterhin Updates zu erhalten!';
+wp_mail($to, $subject, $message );
+}
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
 
 class WPHCMS {
     private $wphcms_options;
@@ -55,19 +74,6 @@ class WPHCMS {
         ?>
             </h2>
             <div class="card">
-<?php
-// GitHub-Updater inaktiv?
-        if (!function_exists('is_plugin_inactive')) {
-            require_once ABSPATH . '/wp-admin/includes/plugin.php';
-        }
-        if (is_plugin_inactive('github-updater/github-updater.php')) {
-            ?>
-<div class="notice notice-error"><p>Bitte das Plugin <a href="https://www.web266.de/tutorials/github/github-updater/" target="_blank"><b>"GitHub-Updater"</b></a> herunterladen, installieren und aktivieren, um weiterhin Updates zu erhalten!</p></div>
-<?php
-}
-        ?>
-            <?php settings_errors();?>
-
             <form method="post" action="options.php">
                 <?php
 settings_fields('wphcms_option_group');
@@ -151,11 +157,17 @@ settings_fields('wphcms_option_group');
 
 // * Retrieve this value with:
 $wphcms_options = get_option('wphcms_option_name'); // Array of All Options
-$sender_0 = $wphcms_options['sender_0']; // sender
-$email_1 = $wphcms_options['email_1']; // email
-
+//$sender_0 = $wphcms_options['sender_0']; // sender Original
+if(!empty($wphcms_options['sender_0'])) {  // sender
+$sender_0 = $wphcms_options['sender_0'];
+}
+//$email_1 = $wphcms_options['email_1']; // email Original
+if(!empty($wphcms_options['email_1'])) {  // sender
+$email_1 = $wphcms_options['email_1'];
+}
 // Daten für Absender und E-Mail-Adresse vorhanden?
-if ($sender_0 == "" or $email_1 == "") {
+//if ($sender_0 == "" or $email_1 == "") { // Original
+if (!empty($sender_0) == "" or !empty($email_1) == "") {
     function wphcms_adress_or_email_empty_notice() {; // Adresse oder E-Mail fehlt
 
         ?>
