@@ -1,6 +1,6 @@
 === WP H-Change Mail Sender ===
 Requires at least: 4.0
-Tested up to: 5.7
+Tested up to: 5.7.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,6 +14,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 3. Configure the plugin in Dashboard -> WP H-Change Mail Sender
 
 == Changelog ==
+Version 1.5.1
+1. PHP-Code überarbeitet
+2. Erinnerung an Git Updater kommt nun bei jeder Plugin-Aktivierung
+
+Version 1.5
+1. Link zu Git-Updater geändert 
+2. Tested up to: 5.7.2
+
 Version 1.4
 1. Warnung, wenn GitHub Updater inaktiv ist
 2. Admin notice beseitigt
